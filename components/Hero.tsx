@@ -89,28 +89,30 @@ export default function Hero() {
     <section className="pt-36 pb-20 px-6 relative overflow-hidden">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[400px] bg-violet-500/10 blur-[120px] rounded-full pointer-events-none" />
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-violet-500/10 border border-violet-500/20 text-violet-300 text-xs font-medium px-3 py-1.5 rounded-full mb-8 backdrop-blur-sm">
-            <Icon icon="solar:magic-stick-3-linear" />
-            AI Automation Subscription
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Left — Copy */}
+          <div>
+            <div className="inline-flex items-center gap-2 bg-violet-500/10 border border-violet-500/20 text-violet-300 text-xs font-medium px-3 py-1.5 rounded-full mb-8 backdrop-blur-sm">
+              <Icon icon="solar:magic-stick-3-linear" />
+              AI Automation Subscription
+            </div>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-tight mb-6 text-white">
+              Automation AI service subscription
+              for{" "}
+              <span className="bg-gradient-to-r from-violet-400 to-indigo-400 bg-clip-text text-transparent">
+                small and medium
+              </span>{" "}
+              businesses.
+            </h1>
+            <p className="text-base sm:text-lg text-neutral-400 max-w-xl leading-relaxed">
+              One flat monthly fee. We analyze your business, find what needs
+              automating, build AI agents, and keep everything running — so you can
+              focus on growth.
+            </p>
           </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-tight mb-6 text-white max-w-4xl mx-auto">
-            Automation AI service <br className="hidden sm:block" /> subscription
-            for{" "}
-            <span className="bg-gradient-to-r from-violet-400 to-indigo-400 bg-clip-text text-transparent">
-              small and medium
-            </span>{" "}
-            businesses.
-          </h1>
-          <p className="text-base sm:text-lg text-neutral-400 max-w-2xl mx-auto leading-relaxed">
-            One flat monthly fee. We analyze your business, find what needs
-            automating, build AI agents, and keep everything running — so you can
-            focus on growth.
-          </p>
-        </div>
 
-        {/* Chat Experience */}
-        <div id="hero-chat" className="max-w-2xl mx-auto">
+          {/* Right — Chat Experience */}
+          <div id="hero-chat">
           <div className="bg-neutral-900/50 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden shadow-2xl shadow-violet-900/10">
             <div className="px-5 py-4 border-b border-white/5 flex items-center gap-3 bg-neutral-900/80">
               <div className="w-8 h-8 bg-gradient-to-br from-violet-500 to-indigo-600 rounded-full flex items-center justify-center shadow-inner shadow-white/20">
@@ -193,6 +195,7 @@ export default function Hero() {
               </div>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </section>

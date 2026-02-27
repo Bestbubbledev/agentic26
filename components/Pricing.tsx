@@ -1,3 +1,5 @@
+"use client";
+
 import { Icon } from "@iconify/react";
 
 const features = [
@@ -79,6 +81,10 @@ export default function Pricing() {
 
               <a
                 href="#contact"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById("contact")?.scrollIntoView({ behavior: "smooth", block: "start" });
+                }}
                 className="block w-full bg-white text-neutral-950 hover:bg-neutral-200 text-center text-sm font-medium py-3.5 rounded-xl transition-colors duration-200"
               >
                 Start your subscription

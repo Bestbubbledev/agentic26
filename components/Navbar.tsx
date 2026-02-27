@@ -1,4 +1,22 @@
+"use client";
+
 import { Icon } from "@iconify/react";
+
+const navLinks = [
+  { label: "What we do", href: "#what-we-do" },
+  { label: "How it works", href: "#how-it-works" },
+  { label: "Examples", href: "#examples" },
+  { label: "Pricing", href: "#pricing" },
+];
+
+function scrollTo(e: React.MouseEvent<HTMLAnchorElement>, href: string) {
+  e.preventDefault();
+  const id = href.replace("#", "");
+  const el = document.getElementById(id);
+  if (el) {
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
 
 export default function Navbar() {
   return (
@@ -13,25 +31,21 @@ export default function Navbar() {
           </span>
         </div>
         <div className="hidden md:flex items-center gap-8 text-sm font-medium text-neutral-400">
-          <a href="#what-we-do" className="hover:text-white transition-colors">
-            What we do
-          </a>
-          <a
-            href="#how-it-works"
-            className="hover:text-white transition-colors"
-          >
-            How it works
-          </a>
-          <a href="#examples" className="hover:text-white transition-colors">
-            Examples
-          </a>
-          <a href="#pricing" className="hover:text-white transition-colors">
-            Pricing
-          </a>
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={(e) => scrollTo(e, link.href)}
+              className="hover:text-white transition-colors"
+            >
+              {link.label}
+            </a>
+          ))}
         </div>
         <div className="flex items-center gap-4">
           <a
             href="#contact"
+            onClick={(e) => scrollTo(e, "#contact")}
             className="hidden sm:flex items-center gap-2 text-sm font-medium text-neutral-400 hover:text-white transition-colors"
           >
             <Icon icon="solar:phone-linear" />
@@ -39,6 +53,7 @@ export default function Navbar() {
           </a>
           <a
             href="#hero-chat"
+            onClick={(e) => scrollTo(e, "#hero-chat")}
             className="bg-white/10 border border-white/10 text-white text-sm font-medium px-4 py-2 rounded-lg hover:bg-white hover:text-neutral-950 transition-all duration-300"
           >
             Get started
