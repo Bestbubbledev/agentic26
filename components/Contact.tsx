@@ -23,7 +23,7 @@ export default function Contact() {
         <div className="grid sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {/* Call */}
           <a
-            href="tel:+18001234567"
+            href="tel:+19122898859"
             className="group bg-neutral-900/40 border border-white/5 rounded-2xl p-8 text-center hover:border-violet-500/30 hover:bg-neutral-900/60 transition-all duration-300"
           >
             <div className="w-14 h-14 bg-violet-500/10 border border-violet-500/20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
@@ -39,7 +39,7 @@ export default function Contact() {
               Have a real-time voice conversation with our AI sales agent.
             </p>
             <div className="text-sm text-violet-400 font-medium">
-              Call +1 (800) 123-4567
+              Call +1 (912) 289-8859
             </div>
             <div className="text-xs text-neutral-500 mt-1.5">
               Available 24/7 · Instant pickup
