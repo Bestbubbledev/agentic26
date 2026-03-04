@@ -1,8 +1,12 @@
 "use client";
 
+import { useState } from "react";
 import { Icon } from "@iconify/react";
+import VoiceCallModal from "./VoiceCallModal";
 
 export default function Contact() {
+  const [voiceCallOpen, setVoiceCallOpen] = useState(false);
+
   return (
     <section id="contact" className="py-24 px-6">
       <div className="max-w-7xl mx-auto">
@@ -47,9 +51,9 @@ export default function Contact() {
           </a>
 
           {/* Demo */}
-          <a
-            href="#"
-            className="group hover:border-emerald-500/30 hover:bg-neutral-900/60 transition-all duration-300 text-center bg-neutral-900/40 border-white/5 border rounded-2xl p-8"
+          <button
+            onClick={() => setVoiceCallOpen(true)}
+            className="group hover:border-emerald-500/30 hover:bg-neutral-900/60 transition-all duration-300 text-center bg-neutral-900/40 border-white/5 border rounded-2xl p-8 cursor-pointer outline-none w-full"
           >
             <div className="w-14 h-14 bg-emerald-500/10 border border-emerald-500/20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
               <Icon
@@ -69,7 +73,7 @@ export default function Contact() {
             <div className="text-xs text-neutral-500 mt-1.5">
               Instant access · Real-time
             </div>
-          </a>
+          </button>
 
           {/* Chat */}
           <button
@@ -100,6 +104,11 @@ export default function Contact() {
           </button>
         </div>
       </div>
+
+      <VoiceCallModal
+        open={voiceCallOpen}
+        onClose={() => setVoiceCallOpen(false)}
+      />
     </section>
   );
 }
